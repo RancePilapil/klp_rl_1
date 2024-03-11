@@ -15,7 +15,7 @@ import java.lang.Thread;
  *
  * @author Rance Lander L. Pilapil
  */
-public class Main {
+public class PT3 {
 
     /**
      * @param args the command line arguments
@@ -26,21 +26,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         
         //introduction
-        println("hello User");
+        println("Hello User! please insert the requirements for your Job!");
         
         
         //design
         String[] descriptionthing = {
-            "\n\nheres the list of the Dept Code your picking\n"
+            "\n📃 here's the list of the Dept Code 📃"
             + "\nO===========O============O===========O"
             + "\n| Dept Code | Department | Pct Bonus |"
             + "\nO===========O============O===========O"
-            + "\n|     1     | Accounting |     85    |"
-            + "\n|     2     |    Sales   |     72    |"
-            + "\n|     3     |  Personnel |     50    |"
-            + "\n|     4     |   Finance  |     90    |"
+            + "\n|     1     | Accounting |    85%    |"
+            + "\n|     2     |    Sales   |    72%    |"
+            + "\n|     3     |  Personnel |    50%    |"
+            + "\n|     4     |   Finance  |    90%    |"
             + "\nO===========O============O===========O",
-            "\n\nhere. You just need to pick a month from 1 to 12\n"
+            "\n📃 here. You just need to pick a month from 1 to 12 📃"
             + "\nO===============O"
             + "\n| 1 Jan  7 Jul  |"
             + "\n| 2 Feb  8 Aug  |"
@@ -48,7 +48,12 @@ public class Main {
             + "\n| 4 Apr  10 Oct |"
             + "\n| 5 May  11 Nov |"
             + "\n| 6 Jun  12 Dec |"
-            + "\nO===============O"
+            + "\nO===============O",
+            "O=====================O"
+            + "|                     |"
+            + "|                     |"
+            + "|                     |"
+            + "O=====================O"//unused
         };
         
         
@@ -65,9 +70,9 @@ public class Main {
                 String getstring = scanner.nextLine();
                 
                 if (getstring.length() < 2) {
-                    println("your Name must Contain more than 2 characters!");
+                    println("\n⚠your Name must Contain more than 2 characters!");
                 } else if (getstring.length() > 20) {
-                    println("your Name must Contain less than 20 characters!");
+                    println("\n⚠your Name must Contain less than 20 characters!");
                 } else {
                     OnWhile = false;
                     EmployeeName = getstring;
@@ -75,7 +80,7 @@ public class Main {
                 
                 
             } catch (Exception e) {
-                println("Please Enter your Employee Name Properly!!!");
+                println("\n⚠️Please Enter your Employee Name Properly!!!");
             }
             //scanner.nextLine();
         }
@@ -94,7 +99,7 @@ public class Main {
                 int getint = scanner.nextInt();
                 
                 if (getint < 1 || getint > 4) {
-                    println("Please Enter your Department Code Properly!!!");
+                    println("\n⚠Please Enter your Department Code Properly!!!");
                 } else {
                     OnWhile = false;
                     DepartmentCode = getint;
@@ -102,7 +107,7 @@ public class Main {
                 
                 
             } catch (Exception e) {
-                println("Please Enter your Department Code Properly!!!");
+                println("\n⚠Please Enter your Department Code Properly!!!");
             }
             scanner.nextLine();
         }
@@ -114,14 +119,13 @@ public class Main {
         int MonthCode = 0;
         
         while (OnWhile) {
-            print("\n️"
-                    + "\n"
+            print(descriptionthing[1]
                     + "\nPlease Enter your Month Code ( must be 1 to 12 only ) : ");
             try {
                 int getint = scanner.nextInt();
                 
                 if (getint < 1 || getint > 12) {
-                    println("Please Enter your Month Code Properly!!!");
+                    println("\n⚠Please Enter your Month Code Properly!!!");
                 } else {
                     OnWhile = false;
                     MonthCode = getint;
@@ -129,7 +133,7 @@ public class Main {
                 
                 
             } catch (Exception e) {
-                println("Please Enter your Month Code Properly!!!");
+                println("\n⚠Please Enter your Month Code Properly!!!");
             }
             scanner.nextLine();
         }
@@ -141,14 +145,13 @@ public class Main {
         double MonthlyIncome = 0;
         
         while (OnWhile) {
-            print("\n️"
-                    + "\n"
-                    + "\nPlease Enter your Monthly Income ( must be 1000.00 to 120000.00 only ) : ");
+            print("\n\n⚠ your Monthly Income must be 1000.00 to 120000.00 only ⚠️"
+                    + "\nPlease Enter your Monthly Income : ");
             try {
                 double getdouble = scanner.nextDouble();
                 
                 if (getdouble < 1000.00 || getdouble > 120000.00) {
-                    println("Please Enter your Monthly Income Properly!!!");
+                    println("\n⚠Please Enter your Monthly Income Properly!!!");
                 } else {
                     OnWhile = false;
                     MonthlyIncome = getdouble;
@@ -156,7 +159,7 @@ public class Main {
                 
                 
             } catch (Exception e) {
-                println("Please Enter your Monthly Income Properly!!!");
+                println("\n⚠Please Enter your Monthly Income Properly!!!");
             }
             scanner.nextLine();
         }
@@ -218,30 +221,41 @@ public class Main {
         
         
         String[] output = {
-            "\nO====================================O",
-            "\n|                                    |",
-            "\n|     incentive Statement            |",
-            "\n|                                    |",
-            "\n|                                    |",
-            "\n|   Employee Name    : " + DesignSpace(EmployeeName, 14) + "|",
-            "\n|   Department       : " + DesignSpace(Department, 14) + "|",
-            "\n|                                    |",
-            "\n|                                    |",
-            "\n|   Month of Release : " + DesignSpace(MonthofRelease[MonthCode-1], 14) + "|",
-            "\n|   Bonus Amount     : " + DesignSpace(Double.toString(BonusAmount), 14) + "|",
-            "\n|                                    |",
-            "\n|                                    |",
-            "\n|                                    |",
-            "\nO====================================O"
+            "\nO==============================================O",
+            "\n|                                              |",
+            "\n|        ‖◤   I welcome change as an  ◥‖       |",
+            "\n|        ‖◣  opportunity for growth.  ◢‖       |",
+            "\n|                                              |",
+            "\n|      Employee Name    : " + DesignSpace(EmployeeName, 20) + " |",
+            "\n|      Department       : " + DesignSpace(Department, 20) + " |",
+            "\n|     ------------------------------------     |",
+            "\n|                                              |",
+            "\n|      Month of Release : " + DesignSpace(MonthofRelease[MonthCode-1], 20) + " |",
+            "\n|      Monthly Income   : " + DesignSpace("₱"+Double.toString(MonthlyIncome), 20) + " |",
+            "\n|      Percent Bonus    : " + DesignSpace(Integer.toString(PctBonus)+"%", 20) + " |",
+            "\n|                                              |",
+            "\n|      Bonus Amount     : " + DesignSpace("₱"+Double.toString(BonusAmount), 20) + " |",
+            "\n|                                              |",
+            "\nO==============================================O"
         };
         String resultoutput = "";
         for (String text : output) {
             resultoutput += text;
         }
+        clearscreen();
         
         try {
+            print("\nPrinting");
+            Thread.sleep(800);
+            print(".");
+            Thread.sleep(800);
+            print(".");
+            Thread.sleep(800);
+            print(".");
+            Thread.sleep(800);
+            clearscreen();
             for (int i =0;  i < output.length; i++) {
-                Thread.sleep(200);
+                Thread.sleep(400);
                 print(output[i]);
             }
         }
@@ -249,7 +263,7 @@ public class Main {
             println("\n something went wrong....");
         }
         
-        println("\n\nHeres your shit enjoy");
+        println("\n\nHeres the result enjoy");
         
         
     }
@@ -282,10 +296,9 @@ public class Main {
         return Text + spaceresult;
     }
     
-    public static void clearScreen() throws IOException {
-        Runtime.getRuntime().exec("cls");
-        //System.out.print("\033[H\033[2J");
-        //System.out.flush();
+    public static void clearscreen() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
     }
 }
-
