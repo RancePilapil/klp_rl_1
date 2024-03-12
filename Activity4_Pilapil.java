@@ -4,18 +4,18 @@
  */
 
 //package
-package activity4shit;
+package pt3;
 
 //import
 import java.util.Scanner;
-
-
+import java.io.*;
+import java.lang.Thread;
 
 /**
  *
- * @author klp
+ * @author Rance Lander L. Pilapil
  */
-public class Activity4SHIT {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -24,155 +24,182 @@ public class Activity4SHIT {
         // TODO code application logic here
         //Timer timer = new Timer();
         Scanner scanner = new Scanner(System.in);
-        
+
         //introduction
-        println("Hello User! please insert the requirements for your Job!");
-        
-        
-        //design
+        println("Hello User! please !");
+
+
+        //design on scanner
         String[] descriptionthing = {
-            "\n📃 here's the list of Hotel Code 📃"
-            + "\nO===========O============O===========O"
-            + "\n| Dept Code | Department | Pct Bonus |"
-            + "\nO===========O============O===========O"
-            + "\n|     1     | Accounting |    85%    |"
-            + "\n|     2     |    Sales   |    72%    |"
-            + "\n|     3     |  Personnel |    50%    |"
-            + "\n|     4     |   Finance  |    90%    |"
-            + "\nO===========O============O===========O",
-            "\n📃 here. You just need to pick a month from 1 to 12 📃"
-            + "\nO===============O"
-            + "\n| 1 Jan  7 Jul  |"
-            + "\n| 2 Feb  8 Aug  |"
-            + "\n| 3 Mar  9 Sep  |"
-            + "\n| 4 Apr  10 Oct |"
-            + "\n| 5 May  11 Nov |"
-            + "\n| 6 Jun  12 Dec |"
-            + "\nO===============O",
+            "\n📃 here's the list of the Hotel Code 📃"
+            + "\nO=============O===============O"
+            + "\n| Hotel Code  |   Hotel Name  |"
+            + "\nO=============O===============O"
+            + "\n|      1      | InSugar Hotel |"
+            + "\n|      2      | Butong  Hotel |"
+            + "\n|      3      | Apo New Hotel |"
+            + "\nO=============O===============O",
+            "\n📃 here's the list of the Guide Code 📃"
+            + "\nO============O===============O==========O"
+            + "\n| Guide Code |   Guide Name  | Rate/Day |"
+            + "\nO============O===============O==========O"
+            + "\n|     1      |   Jane Bond   |  1106.00 |"
+            + "\n|     2      |  Sylvie Rambo |  930.90  |"
+            + "\n|     3      |  Diega Silang |  920.30  |"
+            + "\n|     4      |  Sabel Lopez  |  1107.00 |"
+            + "\nO============O===============O==========O",
             "O=====================O"
             + "|                     |"
             + "|                     |"
             + "|                     |"
             + "O=====================O"//unused
         };
-        
-        
+
+
         //Prevention and while
         boolean OnWhile = true;
-        
-        //get Employee Name
-        String EmployeeName = "";
-        
+
+        //get Tourist Name
+        String TouristName = "";
+
         while (OnWhile) {
             print("\n⚠ Your Name must contain 2-20 only... ️⚠️"
-                    + "\nPlease Enter your Employee Name : ");
+                    + "\nPlease Enter your Tourist Name : ");
             try {
                 String getstring = scanner.nextLine();
-                
+
                 if (getstring.length() < 2) {
                     println("\n⚠your Name must Contain more than 2 characters!");
                 } else if (getstring.length() > 20) {
                     println("\n⚠your Name must Contain less than 20 characters!");
                 } else {
                     OnWhile = false;
-                    EmployeeName = getstring;
+                    TouristName = getstring;
                 }
-                
-                
+
+
             } catch (Exception e) {
-                println("\n⚠️Please Enter your Employee Name Properly!!!");
+                println("\n⚠️Please Enter your Tourist Name Properly!!!");
             }
             //scanner.nextLine();
         }
-        
+
         //◙▮■■■▬
-        
+
         OnWhile = true;
-        
-        //get Department Code
-        int DepartmentCode = 0;
-        
+
+        //get Hotel Code
+        int HotelCode = 0;
+        clearscreen();
+
         while (OnWhile) {
             print(descriptionthing[0]
-                    + "\nPlease Enter your Department Code ( must be 1 to 4 only ) : ");
+                    + "\nPlease Enter your Hotel Code ( must be 1 to 3 only ) : ");
             try {
                 int getint = scanner.nextInt();
-                
-                if (getint < 1 || getint > 4) {
-                    println("\n⚠Please Enter your Department Code Properly!!!");
+
+                if (getint < 1 || getint > 3) {
+                    clearscreen();
+                    println("\n⚠Please Enter your Hotel Code Properly!!!");
                 } else {
                     OnWhile = false;
-                    DepartmentCode = getint;
+                    HotelCode = getint;
                 }
-                
-                
+
+
             } catch (Exception e) {
-                println("\n⚠Please Enter your Department Code Properly!!!");
+                clearscreen();
+                println("\n⚠Please Enter your Hotel Code Properly!!!");
             }
             scanner.nextLine();
         }
-        
-        
+
+
         OnWhile = true;
-        
-        //get Month Code
-        int MonthCode = 0;
-        
+
+        //get Guide Code
+        int GuideCode = 0;
+        clearscreen();
+
         while (OnWhile) {
             print(descriptionthing[1]
-                    + "\nPlease Enter your Month Code ( must be 1 to 12 only ) : ");
+                    + "\nPlease Enter your Guide Code ( must be 1 to 4 only ) : ");
             try {
                 int getint = scanner.nextInt();
-                
-                if (getint < 1 || getint > 12) {
-                    println("\n⚠Please Enter your Month Code Properly!!!");
+
+                if (getint < 1 || getint > 4) {
+                    clearscreen();
+                    println("\n⚠Please Enter your Guide Code Properly!!!");
                 } else {
                     OnWhile = false;
-                    MonthCode = getint;
+                    GuideCode = getint;
                 }
-                
-                
+
+
             } catch (Exception e) {
-                println("\n⚠Please Enter your Month Code Properly!!!");
+                clearscreen();
+                println("\n⚠Please Enter your Guide Code Properly!!!");
             }
             scanner.nextLine();
         }
-        
-        
+
+
         OnWhile = true;
-        
-        //get Monthly Income
-        double MonthlyIncome = 0;
-        
+
+        //get Guide Code
+        int TourDays = 0;
+        clearscreen();
+
         while (OnWhile) {
-            print("\n\n⚠ your Monthly Income must be 1000.00 to 120000.00 only ⚠️"
-                    + "\nPlease Enter your Monthly Income : ");
+            print(""
+                    + "\nPlease Enter your Tour Days ( you can only select between 3 to 9 ) : ");
             try {
-                double getint = scanner.nextInt();
-                
-                if (getint < 1000.00 || getint > 120000.00) {
-                    println("\n⚠Please Enter your Monthly Income Properly!!!");
+                int getint = scanner.nextInt();
+
+                if (getint < 3 || getint > 9) {
+                    clearscreen();
+                    println("\n⚠Please Enter your Tour Days Properly!!!");
                 } else {
                     OnWhile = false;
-                    MonthlyIncome = getint;
+                    TourDays = getint;
                 }
-                
-                
+
+
             } catch (Exception e) {
-                println("\n⚠Please Enter your Monthly Income Properly!!!");
+                clearscreen();
+                println("\n⚠Please Enter your Tour Days Properly!!!");
             }
             scanner.nextLine();
         }
-        
-        
-        
+
+
+
         //===============[ getting the result's ]==============================
+
+        String GuideName = "";
+        double RatePerDay = 0;
         
-        
-        switch (DepartmentCode) {
+        String[] HotelName = { "InSugar Hotel", "Butong Hotel", "Apo New Hotel"};
+
+        switch (GuideCode) {
             case 1:
+                GuideName = "Jane Bond";
+                RatePerDay = 1106.00;
                 break;
+            case 2:
+                GuideName = "Sylvie Rambo";
+                RatePerDay = 930.90;
+                break;
+            case 3:
+                GuideName = "Diega Silang";
+                RatePerDay = 920.30;
+                break;
+            case 4:
+                GuideName = "Sabel Lopez";
+                RatePerDay = 1107.00;
         }
+
+        double TotalFee = RatePerDay * TourDays;
         
         
         //===============[ output ]============================================
@@ -186,15 +213,22 @@ public class Activity4SHIT {
         }
         */
         //System.out.close();
-        
-        
+
+
         String[] output = {
             "\nO==============================================O",
             "\n|                                              |",
-            "\n|        ‖◤           e e e           ◥‖       |",
+            "\n|              ‖(   Hotel TOUR  )‖              |",
             "\n|                                              |",
+            "\n|      Tourist Name     : " + DesignSpace(TouristName, 20) + " |",
+            "\n|      Hotel            : " + DesignSpace(HotelName[HotelCode-1], 20) + " |",
+            "\n|      Guide Name       : " + DesignSpace(GuideName, 20) + " |",
+            "\n|     ------------------------------------     |",
             "\n|                                              |",
-            "\n|      Employee Name    : " + DesignSpace(EmployeeName, 20) + " |",
+            "\n|      Tour Days        : " + DesignSpace(TourDays+" Days", 20) + " |",
+            "\n|      Rate per Day     : " + DesignSpace("₱"+Double.toString(RatePerDay), 20) + " |",
+            "\n|                                              |",
+            "\n|      Total Fee        : " + DesignSpace("₱"+Double.toString(TotalFee), 20) + " |",
             "\n|                                              |",
             "\nO==============================================O"
         };
@@ -203,7 +237,7 @@ public class Activity4SHIT {
             resultoutput += text;
         }
         clearscreen();
-        
+
         try {
             print("\nPrinting");
             Thread.sleep(800);
@@ -222,22 +256,22 @@ public class Activity4SHIT {
         catch (Exception e) {
             println("\n something went wrong....");
         }
-        
+
         println("\n\nHeres the result enjoy");
-        
-        
+
+
     }
-    
+
     public static void print(Object o) {
         System.out.print(o);
     }
     public static void println(Object o) {
         System.out.println(o);
     }
-    
+
     public static String GetString(String Text, Object... params) {
         String message = Text;
-        
+
         int i = 0;
         for (Object obj : params) {
             String target = "{" + i + "}";
@@ -246,7 +280,7 @@ public class Activity4SHIT {
         }
         return message;
     }
-    
+
     public static String DesignSpace(String Text, int totalspace) {
         String spaceresult = "";
         int spacecount = totalspace - Text.length();
@@ -255,11 +289,10 @@ public class Activity4SHIT {
         }
         return Text + spaceresult;
     }
-    
+
     public static void clearscreen() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 100; i++) {
             System.out.println();
         }
     }
-    
 }
