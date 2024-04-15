@@ -1,0 +1,168 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package pt3_goruplolol;
+
+
+//Scanner
+import java.util.Scanner;
+
+/**
+ *
+ * @author klp
+ */
+public class PT3_GORUPLOLOL {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        do {
+            //student info
+            String Name = "";
+            String Password = "";
+            byte Age = 0;
+            String Birthday = "";
+            String Gender = "";
+            String Course = "";
+            int StudentID = 0;
+            String Address = "";
+            String PhoneNumber = "";
+            String Email = "";
+            
+            //enrollment manager
+            int nextStudentID = 987654305 + 1;
+            
+            System.out.println("hello loggedin? (y/n):");
+            String yn = scanner.nextLine().toLowerCase();
+            
+            switch (yn) {
+                case "y":
+                    String GetName,GetPassword;
+                    do {
+                        System.out.println("enter Name:");
+                        GetName = scanner.nextLine();
+                        switch (GetName) {
+                            case "John Doe":
+                                Name = "John Doe";
+                                Password = "JohnDoe3210";
+                                Age = 18;
+                                Birthday = "April 4 2006";
+                                Gender = "Male";
+                                Course = "IT";
+                                StudentID = 987654305;
+                                Address = "Bacoor Cavite 123 Mapie Street";
+                                PhoneNumber = "( 63+ ) 123456789101";
+                                Email = "johnd0e24@example.com";
+                                break;
+                            case "Doe John":
+                                Name = "Doe John";
+                                Password = "DoeJohn0123";
+                                Age = 17;
+                                Birthday = "March 21 2006";
+                                Gender = "Male";
+                                Course = "none";
+                                StudentID = 987667305;
+                                Address = "Bacoor Cavite 456 Mapie Street";
+                                PhoneNumber = "( 63+ ) 45645789101";
+                                Email = "d0ejohn123@example.com";
+                            default:
+                                System.out.println("could not found the name of the account");
+                                break;
+                        }
+                    } while (!GetName.equals(Name));
+                    do {
+                        System.out.println("enter password:");
+                        GetPassword = scanner.nextLine();
+                        if (!GetPassword.equals(Password)) {
+                            System.out.println("Password Incorrect");
+                        }
+                    } while (!GetPassword.equals(Password));
+                    if (Course.equals("none")) {
+                        do {
+                            System.out.println("test");
+                            System.out.println("choose course:");
+                            Course = scanner.nextLine();
+                            switch (Course) {
+                                case "IT":
+                                    
+                                    break;
+                                case "Business":
+                                    
+                                    break;
+                                case "Accountancy":
+                                    //unavailable
+                                    System.out.println("This Course is unavaiable");
+                                    break;
+                                case "Computer Science":
+                                    
+                                    break;
+                                case "Education":
+                                    
+                                    break;
+                                case "Engineering":
+                                    
+                                    break;
+                                case "Technology":
+                                    
+                                    break;
+                                case "Agriculture":
+                                    //unavaiable
+                                    System.out.println("This Course is unavaiable");
+                                    break;
+                                case "Culinary":
+                                    //unavaiable
+                                    System.out.println("This Course is unavaiable");
+                                    break;
+                                case "Medicine":
+                                    //unavaiable
+                                    System.out.println("This Course is unavaiable");
+                                    break;
+                                case "Psychology":
+                                    
+                                    break;
+                                case "Economics":
+                                    //unavaiable
+                                    System.out.println("This Course is unavaiable");
+                                    break;
+                                case "Computer Engineering":
+                                    
+                                    break;
+                            }
+                        } while (Course.equals("none"));
+                    }
+                    break;
+                case "n":
+                    
+                    //register
+                    System.out.println("hello there seems your creating account");
+                    System.out.print("create your name: ");
+                    
+                    Name = scanner.nextLine();
+                    
+                    System.out.print("create your password: ");
+                    Password = scanner.nextLine();
+                    
+                    
+                    try {
+                        System.out.println("Enter your Age: ");
+                        Age = scanner.nextByte();
+                    } catch (Exception e) {
+                        System.out.println("error please try again");
+                    }
+                    
+                    
+                    break;
+                default:
+                    System.out.println("Y OR N????");
+                    break;
+            }
+        } while (true);
+    }
+    
+}
