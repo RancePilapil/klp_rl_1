@@ -39,18 +39,35 @@ public class PT3_GORUPLOLOL {
         int nextStudentID = 987654305 + 1;
             
         do {
-            System.out.println("hello loggedin? (y/n):");
+            System.out.println("");//spacing
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("type 'no' if you don't have a account.");
+            System.out.print("Hello Student, would you like to log in? (yes/no) : ");
             String yn = scanner.nextLine().toLowerCase();
             
             switch (yn) {
+                case "yes":
                 case "y":
+                {
+                    //sets a variable
                     String GetName,GetPassword;
+                    
+                    System.out.println("");//spacing
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    
+                    System.out.println("Okay, let's get you logged in.");
                     do {
-                        System.out.println("enter Name:");
+                        System.out.print("Please enter name: ");
+                        //prompt user to enter their Name
                         GetName = scanner.nextLine();
-                        if (!GetName.equals(Name)){
+                        if (!GetName.equals(Name) || Name.equals("")){// if the user did not create their account or if their name did not match the one that was used to create it
                             switch (GetName) {
                                 case "John Doe":
+                                    //retrieve this account if user match this Name
                                     Name = "John Doe";
                                     Password = "JohnDoe3210";
                                     Age = 18;
@@ -63,6 +80,7 @@ public class PT3_GORUPLOLOL {
                                     Email = "johnd0e24@example.com";
                                     break;
                                 case "Doe John":
+                                    //retrieve this account if user match this Name
                                     Name = "Doe John";
                                     Password = "DoeJohn0123";
                                     Age = 17;
@@ -73,397 +91,277 @@ public class PT3_GORUPLOLOL {
                                     Address = "Bacoor Cavite 456 Mapie Street";
                                     PhoneNumber = "( 63+ ) 45645789101";
                                     Email = "d0ejohn123@example.com";
+                                    break;
                                 default:
+                                    // if any name on database din't match
                                     System.out.println("could not found the name of the account");
                                     break;
                             }
                         }
-                    } while (!GetName.equals(Name));
+                    } while (!GetName.equals(Name)); // loop if user din't match the name on database
+                    
+                    System.out.println("");//spacing
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    
                     do {
-                        System.out.println("enter password:");
+                        System.out.print("now enter your password: ");
+                        //prompt for user to Enter Their Password
                         GetPassword = scanner.nextLine();
-                        if (!GetPassword.equals(Password)) {
+                        
+                        if (!GetPassword.equals(Password)) {// if the user enter the password incorrectly
                             System.out.println("Password Incorrect");
                         }
-                    } while (!GetPassword.equals(Password));
-                    if (Course.equals("none")) {
+                    } while (!GetPassword.equals(Password));// if the user enter the password incorrectly
+                    
+                    System.out.println("");//spacing
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    
+                    if (Course.equals("none")) {// When a person logs in and their account has no Course
+                        
+                        System.out.println("You don't appear to have a course yet. ");
+                        System.out.println("A course from this list is yours to select.");
+                        System.out.println("");
+                        System.out.println("          Available Courses     ");
+                        System.out.println("- IT                - Engineering");
+                        System.out.println("- Business          - Technology");
+                        System.out.println("- Computer Science  - Psychology");
+                        System.out.println("- Education         - Computer Engineering");
+                        System.out.println("");
+                        System.out.println(" ( Simply type \"<your course> Info\" to view any information about the course. ) ");
+                        System.out.println("");
+                        
                         do {
-                            System.out.println("seems you don't have your course");
-                            System.out.println("choose your course:");
-                            Course = scanner.nextLine();
-                            switch (Course) {
+                            
+                            System.out.print("Select your course: ");
+                            //prompt user to enter their Course
+                            String getCourse = scanner.nextLine();
+                            
+                            switch (getCourse) {
+                                case "IT info":
+                                    System.out.println("Information about ( IT )");
+                                    System.out.println("IT involves the study of computing concepts and theories, algorithmic foundations, and new developments in computing.");
+                                    break;
+                                case "Business info":
+                                    System.out.println("Information about ( Business )");
+                                    System.out.println("Business courses cover a wide range of topics including entrepreneurship, marketing, finance, and more.");
+                                    break;
+                                case "Computer Science info":
+                                    System.out.println("Information about ( Compter Science )");
+                                    System.out.println("This field involves the study of how computers work and how to create software solutions.");
+                                    break;
+                                case "Education info":
+                                    System.out.println("Information about ( Education )");
+                                    System.out.println("Education courses prepare students for careers in teaching, research, counseling, and human resources.");
+                                    break;
+                                case "Engineering info":
+                                    System.out.println("Information about ( Engineering )");
+                                    System.out.println("Engineering involves the application of scientific and mathematical principles to design, build, and maintain structures, machines, and systems.");
+                                    break;
+                                case "Technology info":
+                                    System.out.println("Information about ( Technology )");
+                                    System.out.println("Technology courses often focus on the practical application of technological innovations in various fields.");
+                                    break;
+                                case "Psychology info":
+                                    System.out.println("Information about ( Psychology )");
+                                    System.out.println("Psychology involves the study of human behavior and mental processes.");
+                                    break;
+                                case "Computer Engineering info":
+                                    System.out.println("Information about ( Computer Engineering )");
+                                    System.out.println("This field combines elements of electrical engineering and computer science to design and develop computer systems and networks.");
+                                    break;
+                                    
+                                    
+                                // if user enter one of this case
                                 case "IT":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( IT )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
                                 case "Business":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Business )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
-                                case "Accountancy":
-                                    //unavailable
-                                    System.out.println("This Course is unavaiable");
-                                    break;
                                 case "Computer Science":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Computer Science )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
                                 case "Education":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Education )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
                                 case "Engineering":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Engineering )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
                                 case "Technology":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Technology )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
-                                case "Agriculture":
-                                    //unavaiable
-                                    System.out.println("This Course is unavaiable");
-                                    break;
-                                case "Culinary":
-                                    //unavaiable
-                                    System.out.println("This Course is unavaiable");
-                                    break;
-                                case "Medicine":
-                                    //unavaiable
-                                    System.out.println("This Course is unavaiable");
-                                    break;
                                 case "Psychology":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Psychology )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
-                                case "Economics":
-                                    //unavaiable
-                                    System.out.println("This Course is unavaiable");
-                                    break;
                                 case "Computer Engineering":
-                                    //student info
-                                    System.out.println("==[ Info ]==");
-                                    System.out.println("Name: " + Name);
-                                    System.out.println("gender: " + Gender);
-                                    System.out.println("age: " + Age);
-                                    System.out.println("BirthDay: " + Birthday);
-                                    System.out.println("Address: " + Address);
-                                    System.out.println(" ");
-                                    System.out.println("StudentID: " + StudentID);
-                                    System.out.println("PhoneNumber: " + PhoneNumber);
-                                    System.out.println("Email Address: " + Email);
-                                    //course info
-                                    System.out.println(" ");
-                                    System.out.println("your Course is ( Computer Engineering )");
-                                    System.out.println("Payment: ");
-                                    System.out.println("Info:");
-                                    return;
+                                    Course = getCourse;
+                                    break;
+                                    
+                                    
+                                // if user enter one of this case
+                                case "Accountancy":
+                                case "Agriculture":
+                                case "Culinary":
+                                case "Medicine":
+                                case "Economics":
+                                    System.out.println("This Course is Unavailable please try again...");
+                                    break;
+                                    
+                                //if user din't enter any of the case
+                                default:
+                                    System.out.println("The Course you choose is not on the list!");
+                                    break;
                             }
-                        } while (Course.equals("none"));
-                        
-                        
-                        switch (Course) {
-                            case "IT":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( IT )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Business":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Business )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Accountancy":
-                                //unavailable
-                                Course = "none";
-                                System.out.println("This Course is unavaiable");
-                                break;
-                            case "Computer Science":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Computer Science )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Education":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Education )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Engineering":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Engineering )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Technology":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Technology )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Agriculture":
-                                //unavaiable
-                                Course = "none";
-                                System.out.println("This Course is unavaiable");
-                                break;
-                            case "Culinary":
-                                //unavaiable
-                                Course = "none";
-                                System.out.println("This Course is unavaiable");
-                                break;
-                            case "Medicine":
-                                //unavaiable
-                                Course = "none";
-                                System.out.println("This Course is unavaiable");
-                                break;
-                            case "Psychology":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Psychology )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            case "Economics":
-                                //unavaiable
-                                Course = "none";
-                                System.out.println("This Course is unavaiable");
-                                break;
-                            case "Computer Engineering":
-                                //student info
-                                System.out.println("==[ Info ]==");
-                                System.out.println("Name: " + Name);
-                                System.out.println("gender: " + Gender);
-                                System.out.println("age: " + Age);
-                                System.out.println("BirthDay: " + Birthday);
-                                System.out.println("Address: " + Address);
-                                System.out.println(" ");
-                                System.out.println("StudentID: " + StudentID);
-                                System.out.println("PhoneNumber: " + PhoneNumber);
-                                System.out.println("Email Address: " + Email);
-                                //course info
-                                System.out.println(" ");
-                                System.out.println("your Course is ( Computer Engineering )");
-                                System.out.println("Payment: ");
-                                System.out.println("Info:");
-                                return;
-                            }
-                        
+                        } while (Course.equals("none"));// the loop while continue if the Course hasn't been assigned yet
                     }
-                    break;
+                    
+                    System.out.println("");//spacing
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    
+                    //Students Info
+                    System.out.println("O==========[ Your Info ]==========O");
+                    System.out.println("Name: " + Name);
+                    System.out.println("gender: " + Gender);
+                    System.out.println("age: " + Age);
+                    System.out.println("BirthDay: " + Birthday);
+                    System.out.println("Address: " + Address);
+                    System.out.println(" ");
+                    System.out.println("StudentID: " + StudentID);
+                    System.out.println("PhoneNumber: " + PhoneNumber);
+                    System.out.println("Email Address: " + Email);
+                    System.out.println("O=================================O");
+                    
+                    //Course output
+                    switch (Course) {
+                        case "IT":
+                            //course info
+                            System.out.println("your Course is ( IT )");
+                            System.out.println("Tuition Fee: ₱30,000 Php to ₱38,000 Php per year");
+                            System.out.println("Info: IT involves the study of computing concepts and theories, algorithmic foundations, and new developments in computing.");
+                            break;
+                        case "Business":
+                            //course info
+                            System.out.println("your Course is ( Business )");
+                            System.out.println("Tuition Fee: ₱30,000 to ₱38,000 per year");
+                            System.out.println("Info: Business courses cover a wide range of topics including entrepreneurship, marketing, finance, and more.");
+                            break;
+                        case "Accountancy":
+                            //unavailable
+                            Course = "none";
+                            System.out.println("This Course is unavaiable");
+                            break;
+                        case "Computer Science":
+                            //course info
+                            System.out.println("your Course is ( Computer Science )");
+                            System.out.println("Tuition Fee: ₱130,000 to ₱195,000 per year");
+                            System.out.println("Info: This field involves the study of how computers work and how to create software solutions.");
+                            break;
+                        case "Education":
+                            //course info
+                            System.out.println("your Course is ( Education )");
+                            System.out.println("Tuition Fee: ₱30,000 to ₱38,000 per year");
+                            System.out.println("Info: Education courses prepare students for careers in teaching, research, counseling, and human resources.");
+                            break;
+                        case "Engineering":
+                            //course info
+                            System.out.println("your Course is ( Engineering )");
+                            System.out.println("Tuition Fee: ₱30,000 to ₱195,000 per year");
+                            System.out.println("Info: Engineering involves the application of scientific and mathematical principles to design, build, and maintain structures, machines, and systems.");
+                            break;
+                        case "Technology":
+                            //course info
+                            System.out.println("your Course is ( Technology )");
+                            System.out.println("Tuition Fee: ₱30,000 to ₱56,000 per year");
+                            System.out.println("Info: Technology courses often focus on the practical application of technological innovations in various fields.");
+                            break;
+                        case "Agriculture":
+                            //unavaiable
+                            Course = "none";
+                            System.out.println("This Course is unavaiable");
+                            break;
+                        case "Culinary":
+                            //unavaiable
+                            Course = "none";
+                            System.out.println("This Course is unavaiable");
+                            break;
+                        case "Medicine":
+                            //unavaiable
+                            Course = "none";
+                            System.out.println("This Course is unavaiable");
+                            break;
+                        case "Psychology":
+                            //course info
+                            System.out.println("your Course is ( Psychology )");
+                            System.out.println("Tuition Fee: ₱130,000 to ₱195,000 per year");
+                            System.out.println("Info: Psychology involves the study of human behavior and mental processes.");
+                            break;
+                        case "Economics":
+                            //unavaiable
+                            Course = "none";
+                            System.out.println("This Course is unavaiable");
+                            break;
+                        case "Computer Engineering":
+                            //course info
+                            System.out.println("your Course is ( Computer Engineering )");
+                            System.out.println("Tuition Fee: ₱30,000 to ₱195,000 per year");
+                            System.out.println("Info: This field combines elements of electrical engineering and computer science to design and develop computer systems and networks.");
+                            break;
+                    }
+                    System.out.println("O=================================O");
+                    
+                    
+                    return;// stops the whole code
+                    
+                }
+                case "no":
                 case "n":
-                    
+                {
                     //register
-                    System.out.println("hello there seems your creating account");
-                    System.out.print("create your name: ");
-                    Name = scanner.nextLine();
+                    System.out.println("");//spacing
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("Alright then lets proceed creating your Account");
                     
                     
-                    System.out.print("create your password: ");
+                    do {
+                        
+                        System.out.print("There is a minimum of 3 and a maximum of 30 characters when entering your name.");
+                        System.out.print("Create your name: ");
+                        //Prompt User to Type a Name order to create one
+                        String getName = scanner.nextLine();
+                        if (getName.length() < 3) {// if the user prompt the name less than 3 characters
+                            System.out.print("Your Name must be greater than 3 characters");
+                        } else if (getName.length() > 30) { // if the user prompt the name greater than 30 characters
+                            System.out.print("Your Name must be less than 30 characters");
+                        } else {
+                            Name = scanner.nextLine(); // sets a variable Name to escape th while function/loop
+                        }
+                        
+                    } while (Name.equals(""));// the loop will the continue if the Name is unassigned
+                    
+                    
+                    
+                    System.out.print("Create your password: ");
+                    //Prompt User to Type a Password order to create one
                     Password = scanner.nextLine();
                     
                     do {
-                        try {
+                        try {//Using try keyword if there are Errors inside of try function it will run the catch keyword instead stopping the program on why there's an error
+                            
                             System.out.print("Enter your Age: ");
-                            Age = scanner.nextByte();
+                            //Prompt User to Type a Age order to create one
+                            Age = scanner.nextByte();//Tries sets a variable Age to escape while function/loop
+                            
                         } catch (Exception e) {
                             System.out.println("error please try again");
-                            scanner.nextLine();
+                            scanner.nextLine(); //Clear the input buffer
                         }
-                    } while (Age == 0);
+                    } while (Age == 0); // the loop will the continue if the Age is unassigned
                     
                     do {
-                        try {
-                            System.out.println("enter your birthday");
-                            System.out.print("Enter Day ( max 31 ): ");
+                        try { //Using try keyword if there are Errors inside of try function it will run the catch keyword instead stopping the program on why there's an error
+                            //Prompt User to Type a their Birth Day order to create one
+                            System.out.println("now for your Birth Day to create...");
+                            System.out.print("Enter your Day ( max 31 ): ");
                             byte getday = scanner.nextByte();
-                            System.out.print("Enter Month ( 1-12 ): ");
+                            System.out.print("Enter your Month ( 1-12 ): ");
                             byte getmonth = scanner.nextByte();
-                            System.out.print("Enter Year: ");
+                            System.out.print("Enter your Year: ");
                             int getyear = scanner.nextInt();
+                            // an array of Month code for them to select
                             String[] Month = {
                                 "January",
                                 "Febuary",
@@ -481,75 +379,90 @@ public class PT3_GORUPLOLOL {
                             
                             if (getday > 31 || getmonth > 12 || getyear > 2024) {
                                 System.out.println("enter your month properly");
-                            scanner.nextLine();
+                                scanner.nextLine(); //Clear the input buffer
                             } else {
-                                Birthday = Month[getmonth-1] + " " + getday + " " + getyear;
+                                Birthday = Month[getmonth-1] + " " + getday + " " + getyear; // sets a Birthday Variable to escape the while function
                             }
                             
-                        } catch (Exception e) {
+                        } catch (Exception e) { //If there are any Errors inside of the try <code>
                             System.out.println("error please try again");
-                            scanner.nextLine();
+                            scanner.nextLine(); //Clear the input buffer
                         } 
-                    } while (Birthday.equals(""));
+                    } while (Birthday.equals(""));// the loop will the continue if the Birthday is unassigned
                     
                     scanner.nextLine();
                     do {
-                        System.out.print("Enter your Gender ( m/male or f/female) : ");
+                        System.out.print("Enter your Gender ( m/male or f/female ) : ");
+                        //Prompt User to enter their gender
                         switch (scanner.nextLine().toLowerCase()) {
                             case "m":
                             case "male":
-                                Gender = "Male";
+                                Gender = "Male"; // sets a gender Variable to escape the while function
                                 break;
                             case "f":
                             case "female":
-                                Gender = "Female";
+                                Gender = "Female"; // sets a gender Variable to escape the while function
                                 break;
                             default:
+                                // if the user prompt to select none of those gender
                                 System.out.println("Enter your gender properly");
                                 break;
                         }
-                    } while (Gender.equals(""));
+                    } while (Gender.equals("")); // the loop will the continue if the Gender is unassigned
                     
                     System.out.print("Enter your Address: ");
+                    //Prompt User to enter their address
                     Address = scanner.nextLine();
                     
                     do {
                         System.out.print("enter your Phone Number: ");
-                        try {
+                        try {//Using try keyword if there are Errors inside of try function it will run the catch keyword instead stopping the program on why there's an error
+                            
+                            //Prompt User to enter their Phone Number
                             long getnumber = scanner.nextLong();
-                            if (getnumber < 99999999999L) {
+                            
+                            if (getnumber < 99999999999L) {// if the user enter less than 11 digits
                                 System.out.println("Invalid Phone Number!");
                             } else {
-                                PhoneNumber = "( 63+ ) " + getnumber;
+                                PhoneNumber = "( 63+ ) " + getnumber; // sets the variable PhoneNumber to escape the while function
                             }
+                            
                         } catch (Exception e) {
                             System.out.println("Invalid Phone Number!");
-                            scanner.nextLine();
+                            scanner.nextLine(); //Clear the input buffer
                         }
-                    } while (PhoneNumber.equals(""));
+                    } while (PhoneNumber.equals("")); // the loop will the PhoneNumber if the Name is unassigned
                     
-                    scanner.nextLine();
+                    scanner.nextLine(); //Clear the input buffer
                     do {
+                        
                         System.out.print("Enter your Email: ");
+                        //Prompt user to enter their email
                         String getemail = scanner.nextLine();
-                        if (!getemail.contains("@") || !getemail.contains(".com")) {
+                        
+                        if (!getemail.contains("@") || !getemail.contains(".com")) { // if the user enter a email that doesn't contain '@' or '.com'
                             System.out.println("Invalid Email!");
                         } else {
-                            Email = getemail;
+                            Email = getemail; // sets a variable Email to escape the while function
                         }
-                    } while (Email.equals(""));
+                        
+                    } while (Email.equals("")); // the loop will the continue if the Email is unassigned
                     
+                    // sets a variable to create a account
                     StudentID = nextStudentID + 1;
                     Course = "none";
                     
+                    //output
                     System.out.println("Successfully register your account...");
                     
                     break;
+                }
                 default:
-                    System.out.println("Y OR N????");
+                {
+                    System.out.println("Please select whether to log in or not.");
                     break;
+                }
             }
-        } while (true);
+        } while (true);// this loops forever until theres a return or break outside of the switch keyword
     }
-    
 }
