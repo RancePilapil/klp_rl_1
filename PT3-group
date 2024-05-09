@@ -431,7 +431,7 @@ public class PT3_GORUPLOLOL {
                             System.out.println("Invalid Phone Number!");
                             scanner.nextLine(); //Clear the input buffer
                         }
-                    } while (PhoneNumber.equals("")); // the loop will the PhoneNumber if the Name is unassigned
+                    } while (PhoneNumber.equals("")); // the loop will continue if the PhoneNumber if the Name is unassigned
                     
                     scanner.nextLine(); //Clear the input buffer
                     do {
